@@ -1,0 +1,69 @@
+
+.tickets-item{
+  background: #FFFFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 7px;
+  list-style: none;
+}
+.tickets-item-main-info{
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tickets-price{
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+
+  display: flex;
+  align-items: center;
+  color: #2196F3;
+}
+
+.ticket-to-list, .ticket-back-list{
+   width: 100%;
+   padding: 0 20px;
+   list-style: none;
+   display: flex;
+   justify-content: space-between;
+ }
+
+.ticket-to-item {
+  width:20%;
+}
+.ticket-back-item{
+  width:20%;
+}
+.ticket-to-item-about-first, .ticket-back-item-about-first{
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #A0B0B9;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 18px;
+}
+.ticket-to-item-about-second, .ticket-back-item-about-second{
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: #4A4A4A;
+}
+.ticket-to-item-about-second-page{
+  padding-right: 3px;
+}

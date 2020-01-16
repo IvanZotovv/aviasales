@@ -1,0 +1,74 @@
+.container {
+  margin: 20px auto 0;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-image {
+  max-width: 100px;
+}
+
+.transplant-item {
+  list-style: none;
+}
+
+.main-block{
+  display: flex;
+}
+
+.ticket{
+  width: 70%;
+  //background: #82b320;
+}
+.buttons-block{
+  width: 100%;
+  display: flex;
+  margin: 0 7px;
+}
+.buttons-block-cheap, .buttons-block-cheap-second {
+  width: 49%;
+  background: #2196F3;
+  box-sizing: border-box;
+  appearance: none;
+  border: 1px solid #2196F3;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+.buttons-block-fast {
+  width: 49%;
+  background: white;
+  box-sizing: border-box;
+  border: 1px solid #DFE5EC;
+  appearance: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  padding: 1.2em 2.8em;
+}

@@ -1,0 +1,34 @@
+.transplant{
+  width: 30%;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0 7px;
+  height: fit-content;
+}
+.transplant-header{
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 15px;
+  letter-spacing: 1px;
+}
+.transplant-list{
+
+}
+.transplant-item{
+  padding: 7px 0 7px 15px;
+  display: flex;
+  vertical-align: center;
+  font-size: 13px;
+  line-height: 20px;
+
+  color: #4A4A4A;
+  &:hover {
+    background: #F1FCFF;
+  }
+}
+.transplant-item input{
+  margin-right: 7px;
+}

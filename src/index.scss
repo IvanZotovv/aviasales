@@ -9,6 +9,16 @@ $mainWhite:#fff;
 $mainGray:#ececec;
 $mainGreen:#82b320;
 
+@mixin block {
+  margin: 10px auto;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
 body {
-  background: $mainGreen;
+  background: $mainWhite;
+  color: $mainBlack;
+  font-family: Open Sans, serif;
 }

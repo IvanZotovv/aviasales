@@ -1,76 +1,49 @@
 import {
     ADD_ITEMS,
-    ALL,
     FAST_FLIGHT,
     LOWER_PRICE,
-    ONE_TRANSPLANT, THREE_TRANSPLANT,
-    TWO_TRANSPLANT,
-    WITHOUT_TRANSPLANT,
-    REMOVE_ALL
+    SET_FILTER
 } from "../action/actionType";
 
-export const reducer = (state = [], action) => {
+export const listReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_ITEMS: {
             return  [
                 ...state,
-                action.payload
+                ...action.payload,
             ]
         }
+
         case LOWER_PRICE: {
-            const filteredArr = [...new Set(state)].sort((a, b) => {
-                if(a.price > b.price) {
-                    return 1
-                }
-                if(a.price < b.price) {
-                    return -1
-                }
-                return 0
-            });
-
-            return filteredArr
-
+            return [...new Set(state)].sort((a, b) => a.price > b.price ? 1 : -1);
         }
+
         case FAST_FLIGHT: {
-            const filteredFlightTime = [...new Set(state)].sort((a, b) => {
+            return [...new Set(state)].sort((a, b) => {
                 const first = a.segments[0].duration;
                 const second = b.segments[0].duration;
-                if (first > second) {
-                    return 1;
-                }
-                if (first < second) {
-                    return -1;
-                }
-                return 0;
+                return first > second ? 1 : -1
             });
-
-            return [
-                ...filteredFlightTime
-            ]
         }
 
-        case ALL: {
-            console.log(state)
-            return state
-        }
-        case WITHOUT_TRANSPLANT: {
-            return state.filter(i => i.segments[0].stops.length === 0)
-        }
-        case ONE_TRANSPLANT: {
-            console.log(state)
-            return  state.filter(i => i.segments[0].stops.length <= 1)
-        }
-        case TWO_TRANSPLANT: {
-            console.log(state)
-            return  state.filter(i => i.segments[0].stops.length <= 2);
-        }
-        case THREE_TRANSPLANT: {
-            console.log(state)
-            return  state.filter(i => i.segments[0].stops.length <= 3);
-        }
-        case REMOVE_ALL: {
-            console.log(state)
-            return  state
+        case SET_FILTER: {
+            return state.map(i => {
+                if(action.payload.length === 0){
+                    i.hide = false;                 
+                }
+                action.payload.some(item => {
+                    const item1 = parseInt(item)
+                    if(i.segments[0].stops.length === item1 || item === 'all') {
+                        i.hide = false;
+
+                        return true;
+                    }
+                    i.hide = true;
+
+                    return false;
+                })
+                return i;
+            })
         }
         default:
             return state;
