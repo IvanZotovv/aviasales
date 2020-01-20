@@ -1,3 +1,4 @@
+import {LOWER_PRICE, FAST_FLIGHT} from './actionType'
 
 export const filterTransplant = (isChecked) => {
     return {
@@ -11,12 +12,12 @@ export const filterFastAndChip = (type, state) => {
     switch(type){
         case 'lower':
             return {
-                type: 'LOWER_PRICE',
+                type: LOWER_PRICE,
                 payload: state
             }
         case 'faster':
             return {
-                type: 'FAST_FLIGHT',
+                type: FAST_FLIGHT,
                 payload: state
             }
         default:

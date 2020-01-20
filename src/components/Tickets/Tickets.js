@@ -1,12 +1,12 @@
-import React,{Component} from 'react';
+import React from 'react';
 import './Tickets.scss'
 
-
-class Tickets extends Component {
-
-    render() {
-        const {list} = this.props
-        const listOfItems = list.length ? list.map(item => {
+const Tickets = ({list}) => {
+    return (
+        <main className="tickets-block">
+        <ul className="tickets-list">
+            {list.length ? list.map(item => {
+                
             if (item.hide) {
                 return null;
             }
@@ -57,20 +57,10 @@ class Tickets extends Component {
                     }
                 </li>
             )
-        }) : null
-
-        return (
-            <main className="tickets-block">
-                <ul className="tickets-list">
-                    {listOfItems}
-                </ul>
-            </main>
-        )
-    }
-
+        }) : null}
+        </ul>
+    </main>
+    )
 }
 
-
-export default Tickets;
-
-
+export default Tickets

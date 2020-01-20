@@ -79,6 +79,7 @@ class App extends Component {
     changeValue = (e) => {
         const val = e.target.value
         const {list} = this.props
+        
         const isCheckedVal = e.target.checked
         
         if(isCheckedVal){

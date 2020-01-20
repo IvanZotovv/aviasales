@@ -4,6 +4,13 @@ import {
     LOWER_PRICE,
     SET_FILTER
 } from "../action/actionType";
+import thunk from 'redux-thunk'
+import {composeWithDevTools} from "redux-devtools-extension";
+import {createStore, applyMiddleware, combineReducers} from "redux";
+
+
+
+
 
 export const listReducer = (state = [], action) => {
     switch (action.type) {
@@ -15,11 +22,11 @@ export const listReducer = (state = [], action) => {
         }
 
         case LOWER_PRICE: {
-            return [...new Set(state)].sort((a, b) => a.price > b.price ? 1 : -1);
+            return state.sort((a, b) => a.price > b.price ? 1 : -1);
         }
 
         case FAST_FLIGHT: {
-            return [...new Set(state)].sort((a, b) => {
+            return state.sort((a, b) => {
                 const first = a.segments[0].duration;
                 const second = b.segments[0].duration;
                 return first > second ? 1 : -1
@@ -49,3 +56,9 @@ export const listReducer = (state = [], action) => {
             return state;
     }
 }
+
+const reducer = combineReducers({
+    list: listReducer
+})
+
+export const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))
